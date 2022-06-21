@@ -1,3 +1,5 @@
+import { Article } from '../Article/Article';
+
 export const QUERY = gql`
   query FindArticleQuery($id: Int!) {
     article: post(id: $id) {
@@ -18,13 +20,5 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ article }) => {
-  return (
-          <article key={article.id}>
-            <header>
-              <h2>{article.title}</h2>
-            </header>
-            <p>{article.body}</p>
-            <div>Posted: {article.createdAt}</div>
-          </article>
-        );
+  return <Article article={article} />;
 };
