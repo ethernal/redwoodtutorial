@@ -2,6 +2,9 @@ export const QUERY = gql`
   query FindArticleQuery($id: Int!) {
     article: post(id: $id) {
       id
+      title
+      body
+      createdAt
     }
   }
 `;
@@ -15,5 +18,13 @@ export const Failure = ({ error }) => (
 );
 
 export const Success = ({ article }) => {
-  return <div>{JSON.stringify(article)}</div>;
+  return (
+          <article key={article.id}>
+            <header>
+              <h2>{article.title}</h2>
+            </header>
+            <p>{article.body}</p>
+            <div>Posted: {article.createdAt}</div>
+          </article>
+        );
 };
