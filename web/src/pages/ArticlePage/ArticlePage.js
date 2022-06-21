@@ -1,7 +1,7 @@
 import { Link, routes } from '@redwoodjs/router';
 import { MetaTags } from '@redwoodjs/web';
 
-const ArticlePage = () => {
+const ArticlePage = ({id}) => {
   return (
     <>
       <MetaTags title="Article" description="Article page" />
@@ -11,8 +11,7 @@ const ArticlePage = () => {
         Find me in <code>./web/src/pages/ArticlePage/ArticlePage.js</code>
       </p>
       <p>
-        My default route is named <code>article</code>, link to me with `
-        <Link to={routes.article()}>Article</Link>`
+        My id is: {id}
       </p>
     </>
   );
