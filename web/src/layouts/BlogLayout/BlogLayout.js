@@ -1,4 +1,4 @@
-import { Link, routes } from "@redwoodjs/router"
+import { Link, routes } from '@redwoodjs/router';
 
 const BlogLayout = ({ children }) => {
   return (
@@ -12,11 +12,14 @@ const BlogLayout = ({ children }) => {
           <li>
             <Link to={routes.about()}>About</Link>
           </li>
+          <li>
+            <Link to={routes.contact()}>Contact</Link>
+          </li>
         </ul>
       </nav>
       <main>{children}</main>
     </>
-  )
-}
+  );
+};
 
-export default BlogLayout
+export default BlogLayout;
